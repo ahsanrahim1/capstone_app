@@ -2,8 +2,12 @@ class HomesController < ApplicationController
   before_action :authenticate_user
 
   def index
-    home = current_user.homes
-    render json: home.as_json
+    if params[:other]
+      homes = Home.where.not(user_id: current_user.id)
+    else
+      homes = current_user.homes
+    end
+    render json: homes.as_json
   end
 
   def create

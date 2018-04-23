@@ -10,8 +10,8 @@ class RoomsController < ApplicationController
      name: params[:name],
      home_id: params[:home_id],
       )
-    if home.save
-      render json:{messgae:" Home Registered "}, status: :created
+    if room.save
+      render json:{messgae:" Room Registered "}, status: :created
     else
       render json:{messgae:" Registry failed "}, status: :bad_request
     end
