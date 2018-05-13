@@ -4,7 +4,7 @@ response = Unirest.post(
   "http://localhost:3000/user_token",
   parameters: {
     auth: {
-      email: "peter@email.com",
+      email: "ahsan@email.com",
       password: "password"
     }
   }
@@ -17,7 +17,7 @@ p "To create a new user press [1]"
 p "To create a new home [2]"
 p "To view your home [3]"
 p "To create a new room [4]"
-p "To join an existing home [5]"
+p "To view an existing home to join [5]"
 
 
 
@@ -57,7 +57,7 @@ elsif input_word == "4"
   room = response.body
   puts JSON.pretty_generate(room)
 
-elsif input_word == "5"
+elsif input_word == "5" 
   response = Unirest.get("http://localhost:3000/homes?other=true")
   homes = response.body
   puts JSON.pretty_generate(homes)

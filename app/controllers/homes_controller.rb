@@ -1,6 +1,12 @@
 class HomesController < ApplicationController
   before_action :authenticate_user
 
+  def show
+    home_id = params["id"]
+    home = Home.find_by(id: home_id)
+    render json: home.as_json
+  end
+
   def index
     if params[:other]
       homes = Home.where.not(user_id: current_user.id)
@@ -17,9 +23,9 @@ class HomesController < ApplicationController
      user_id: current_user.id,
       )
     if home.save
-      render json:{messgae:" Home Registered "}, status: :created
+      render json:{message:" Home Registered "}, status: :created
     else
-      render json:{messgae:" Registry failed "}, status: :bad_request
+      render json:{message:" Registry failed "}, status: :bad_request
     end
-  end
+  end  
 end

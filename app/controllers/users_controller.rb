@@ -12,4 +12,9 @@ class UsersController < ApplicationController
       render json:{messgae:" Registry failed "}, status: :bad_request
     end
   end
+
+  def get_info
+    response = Unirest.get("http://localhost:4000/run-wemo")
+    render json: response.body
+  end
 end

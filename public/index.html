@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Assan 3.0</title>    
+        <!-- Plugins CSS -->
+        <link href="css/plugins/plugins.css" rel="stylesheet">
+        <!-- REVOLUTION STYLE SHEETS -->
+        <link rel="stylesheet" type="text/css" href="revolution/css/settings.css">
+        <!-- REVOLUTION LAYERS STYLES -->
+        <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+        <!-- REVOLUTION NAVIGATION STYLES -->
+        <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+        <link rel='stylesheet' href='revolution/revolution-addons/particles/css/revolution.addon.particles.css?ver=1.0.3' type='text/css'>
+        <!-- load css for cubeportfolio -->
+        <link rel="stylesheet" type="text/css" href="cubeportfolio/css/cubeportfolio.min.css">
+        <link href="css/style.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <title>My App</title>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.js"></script>
+        <script src="index.js" defer></script>
+    </head>
+
+    <body>
+         <div id="vue-app">
+
+
+        <div id="preloader">
+            <div id="preloader-inner"></div>
+        </div><!--/preloader-->
+
+        <!-- Pushy Menu -->
+        <aside class="pushy pushy-right">
+            <div class="cart-content">
+                <div class="clearfix">
+                    <a href="javascript:void(0)" class="pushy-link text-white-gray">Close</a>
+                </div>
+                <ul class="list-unstyled">
+                    <li class="clearfix">
+                        <a href="#" class="float-left">
+                            <img src="images/shop/p1.jpg" class="img-fluid" alt="" width="60">
+                        </a>
+                        <div class="oHidden">
+                            <span class="close"><i class="ti-close"></i></span>
+                            <h4><a href="#">Men's Special Watch</a></h4>
+                            <p class="text-white-gray"><strong>$299.00</strong> x 1</p>
+                        </div>
+                    </li><!--/cart item-->
+                    <li class="clearfix">
+                        <a href="#" class="float-left">
+                            <img src="images/shop/p2.jpg" class="img-fluid" alt="" width="60">
+                        </a>
+                        <div class="oHidden">
+                            <span class="close"><i class="ti-close"></i></span>
+                            <h4><a href="#">Men's tour beg</a></h4>
+                            <p class="text-white-gray"><strong>$99.00</strong> x 1</p>
+                        </div>
+                    </li><!--/cart item-->
+                    <li class="clearfix">
+                        <a href="#" class="float-left">
+                            <img src="images/shop/p3.jpg" class="img-fluid" alt="" width="60">
+                        </a>
+                        <div class="oHidden">
+                            <span class="close"><i class="ti-close"></i></span>
+                            <h4><a href="#">Women's T-shirts</a></h4>
+                            <p class="text-white-gray"><strong>$199.00</strong> x 1</p>
+                        </div>
+                    </li><!--/cart item-->
+                    <li class="clearfix">
+
+                        <div class="float-right">
+                            <a href="#" class="btn btn-primary">Checkout</a>
+                        </div>
+                        <h4  class="text-white">
+                            <small>Subtotal - </small> $49.99
+                        </h4>
+                    </li><!--/cart item-->
+                </ul>
+            </div>
+        </aside>
+        <!-- Site Overlay -->
+        <div class="site-overlay"></div>
+
+        <nav class="navbar navbar-expand-lg navbar-light navbar-color navbar-transparent-light nav-sticky">
+            <div class="search-inline">
+                    <form>
+                        <input type="text" class="form-control" placeholder="Type and hit enter...">
+                        <button type="submit"><i class="ti-search"></i></button>
+                        <a href="javascript:void(0)" class="search-close"><i class="ti-close"></i></a>
+                    </form>
+                </div>
+            <div class="container">
+
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+                <div  id="navbarNavDropdown" class="navbar-collapse collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/#/my_home">My Home</a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-full-width">
+                            <a class="nav-link" href="/#/homes">
+                                Join Home
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown dropdown-full-width">
+                            <a class="nav-link" href="/#/login">
+                                LogIn
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" href="/#/signup">Sign up</a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li><a href="blog-contained.html" class="dropdown-item">Contained</a></li>
+                                <li><a href="blog-sidebar-left.html" class="dropdown-item">Left Sidebar</a></li>
+                                <li><a href="blog-sidebar-right.html" class="dropdown-item">Right Sidebar</a></li>
+                                <li><a href="blog-masonry.html" class="dropdown-item">Masonry</a></li>
+                                <li><a href="blog-masonry-sidebar.html" class="dropdown-item">Masonry sidebar</a></li>
+                                <li><a href="blog-lg-post-grid.html" class="dropdown-item">Large post grid</a></li>
+                                <li><a href="blog-timeline.html" class="dropdown-item">Timeline</a></li> 
+                                <li class=" dropdown-submenu dropdown">
+                                    <a tabindex="-1" href="#" class="dropdown-item">Single Post</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="post-image.html" class="dropdown-item">Image</a></li>
+                                        <li><a href="post-gallery.html" class="dropdown-item">Gallery</a></li>
+                                        <li><a href="post-video.html" class="dropdown-item">Video</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                         <li class="nav-item dropdown">
+                            <a class="nav-link" href="#">Log Out</a>
+                            <ul class="dropdown-menu dropdown-menu-right">
+                                <li class=" dropdown-submenu dropdown">
+                                    <a tabindex="-1" href="#" class="dropdown-item">Headers</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="header-light-top-bar.html" class="dropdown-item">Light top bar</a></li>
+                                        <li><a href="header-dark-top-bar.html" class="dropdown-item">Dark top bar</a></li>
+                                        <li><a href="header-transparent-dark.html" class="dropdown-item">Transparent Dark</a></li>
+                                        <li><a href="header-transparent-light.html" class="dropdown-item">Transparent Light</a></li>
+                                        <li><a href="header-center-logo.html" class="dropdown-item">Center logo</a></li>
+                                        <li><a href="header-center-navbar.html" class="dropdown-item">Center Navbar</a></li>
+                                        <li><a href="header-sticky-dark.html" class="dropdown-item">Sticky dark</a></li>
+                                        <li><a href="header-sticky-light.html" class="dropdown-item">Sticky light</a></li>
+                                        <li><a href="header-after-hero.html" class="dropdown-item">After hero</a></li>
+                                    </ul>
+                                </li>
+                                <li class=" dropdown-submenu dropdown">
+                                    <a tabindex="-1" href="#" class="dropdown-item">Footers</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="footer-1.html" class="dropdown-item">Footer 1</a></li>
+                                        <li><a href="footer-2.html" class="dropdown-item">Footer 2</a></li>
+                                        <li><a href="footer-3.html" class="dropdown-item">Footer 3</a></li>
+                                        <li><a href="footer-4.html" class="dropdown-item">Footer 4</a></li>
+                                        <li><a href="footer-5.html" class="dropdown-item">Footer 5</a></li>
+                                        <li><a href="footer-6.html" class="dropdown-item">Footer 6</a></li>
+                                        <li><a href="footer-7.html" class="dropdown-item">Footer 7</a></li>
+                                    </ul>
+                                </li>
+                                <li class=" dropdown-submenu dropdown">
+                                    <a tabindex="-1" href="#" class="dropdown-item">Slider & Heros</a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="hero-particle.html" class="dropdown-item">Hero Particle</a></li>
+                                        <li><a href="hero-parallax.html" class="dropdown-item">Hero Parallax</a></li>
+                                        <li><a href="hero-youtube.html" class="dropdown-item">Hero youtube</a></li>
+                                        <li><a href="hero-vimeo.html" class="dropdown-item">Hero Vimeo</a></li>
+                                        <li><a href="hero-agency.html" class="dropdown-item">Hero Agency</a></li>
+                                        <li><a href="slider-particle.html" class="dropdown-item">Slider Particle</a></li>                       
+                                        <li><a href="slider-small.html" class="dropdown-item">Slider Small</a></li>
+                                        <li><a href="slider-text.html" class="dropdown-item">Slider Text</a></li>
+                                        <li><a href="slider-carousel.html" class="dropdown-item">Slider Carousel</a></li>
+                                        <li><a href="slider-kenburns.html" class="dropdown-item">Slider Ken burns</a></li>
+                                        <li><a href="slider-image.html" class="dropdown-item">Slider Image</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <!--                        <li class="nav-item nav-buttons">
+                                                    <a class="nav-link btn btn-primary" target="_blank" href="https://wrapbootstrap.com/theme/assan-multipurpose-14-themes-admin-WB05F069P">Buy Now</a>
+                                                </li>-->
+
+                    </ul>        
+                </div>
+                <div class=" navbar-right-elements">
+                </div><!--right nav icons-->
+            
+            </div>
+        </nav>
+        
+
+         <router-view></router-view>
+
+
+        <div class="footer-bottomAlt">
+            <div class="container">
+                <div class="row">
+                      <div class="col-lg-7">
+                        <div class="clearfix">
+                           <a href="#" class="social-icon-sm si-dark si-facebook si-dark-round">
+                            <i class="fa fa-facebook"></i>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="social-icon-sm si-dark si-twitter si-dark-round">
+                            <i class="fa fa-twitter"></i>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-icon-sm si-dark si-g-plus si-dark-round">
+                            <i class="fa fa-google-plus"></i>
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                        <a href="#" class="social-icon-sm si-dark si-skype si-dark-round">
+                            <i class="fa fa-skype"></i>
+                            <i class="fa fa-skype"></i>
+                        </a>
+                        <a href="#" class="social-icon-sm si-dark si-linkedin si-dark-round">
+                            <i class="fa fa-linkedin"></i>
+                            <i class="fa fa-linkedin"></i>
+                        </a>  
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <span>&copy; Copyright 2017. All Right Reserved</span>
+                    </div>
+                </div>
+            </div>
+        </div><!--/footer bottom-->
+        <!--back to top-->
+        <a href="#" class="back-to-top hidden-xs-down" id="back-to-top"><i class="ti-angle-up"></i></a>
+
+
+        </div>
+
+
+        <!-- jQuery first, then Tether, then Bootstrap JS. -->
+        <script src="js/plugins/plugins.js"></script> 
+        <script src="js/assan.custom.js"></script> 
+        <!-- REVOLUTION JS FILES -->
+        <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <!-- PARTICLES ADD-ON FILES -->
+        <script type='text/javascript' src='revolution/revolution-addons/particles/js/revolution.addon.particles.min.js?ver=1.0.3'></script>
+        <!-- SLIDER REVOLUTION 5.0 EXTENSIONS  (Load Extensions only on Local File Systems !  The following part can be removed on Server for On Demand Loading) -->  
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
+        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+
+        <!-- load cubeportfolio -->
+        <script type="text/javascript" src="cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    </body>
+</html>
+
+
+
+<template id="home-page">
+        <div id="rev_slider_8_1_wrapper" class="rev_slider_wrapper fullscreen-container" data-alias="particle-effect-three6" data-source="gallery" style="background:#ffffff;padding:0px;">
+            <!-- START REVOLUTION SLIDER 5.4.1 fullscreen mode -->
+            <div id="rev_slider_8_1" class="rev_slider fullscreenbanner" style="display:none;" data-version="5.4.1">
+                <ul>  <!-- SLIDE  -->
+                    <li data-index="rs-16" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="default"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="Example One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
+                        <!-- MAIN IMAGE -->
+                        <img src="images/rev-images/transparent.png" data-bgcolor='#ffffff'' style='background:#ffffff' alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <!-- LAYERS -->
+
+                        <!-- LAYER NR. 1 -->
+                        <div class="tp-caption  " 
+                             id="slide-16-layer-15" 
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                             data-y="['middle','middle','middle','middle']" data-voffset="['0','0','0','0']" 
+                             data-width="full-proportional"
+                             data-height="full-proportional"
+                             data-whitespace="nowrap"
+
+                             data-type="image" 
+                             data-basealign="slide" 
+                             data-responsive_offset="off" 
+                             data-responsive="off"
+                             data-frames='[{"delay":500,"speed":300,"frame":"0","from":"opacity:0;","to":"o:1;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;","ease":"Power3.easeInOut"}]'
+                             data-textAlign="['inherit','inherit','inherit','inherit']"
+                             data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]"
+                             data-paddingbottom="[0,0,0,0]"
+                             data-paddingleft="[0,0,0,0]"
+                             data-blendmode="overlay"
+
+                             style="z-index: 5;"><img src="images/rev-images/blurbg7.jpg" alt="" data-ww="['full-proportional','full-proportional','full-proportional','full-proportional']" data-hh="['full-proportional','full-proportional','full-proportional','full-proportional']" width="1920" height="1080" data-no-retina> </div>
+
+                        <!-- LAYER NR. 2 -->
+                        <div class="tp-caption   tp-resizeme  particale-title" 
+                             id="slide-16-layer-6" 
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                             data-y="['middle','middle','middle','middle']" data-voffset="['-110','-110','-130','-130']" 
+                             data-fontsize="['80','80','50','35']"
+                             data-lineheight="['100','100','60','60']"
+                             data-width="1170"
+                             data-height="none"
+                             data-whitespace="nowrap"
+
+                             data-type="text" 
+                             data-responsive_offset="on" 
+                             data-wrapper_class="tp-nopointer" 
+
+                             data-frames='[{"delay":500,"speed":1000,"frame":"0","from":"sX:2;sY:3;opacity:0;fb:10px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']"
+                             data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]"
+                             data-paddingbottom="[0,0,0,0]"
+                             data-paddingleft="[0,0,0,0]"
+
+                             style="z-index: 6; white-space: nowrap; font-size: 50px; line-height: 60px; font-weight: 700; color: rgba(4,37,60,1);letter-spacing:-3px;text-transform:capitalize;"><span style="color:rgba(0,0,0,0.3);">Ahsan</span> <br>Automate your life </div>
+
+                        <!-- LAYER NR. 3 -->
+                        <div class="tp-caption   tp-resizeme" 
+                             id="slide-16-layer-8" 
+                             data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                             data-y="['middle','middle','middle','middle']" data-voffset="['40','40','0','0']" 
+                             data-width="['800','661','560','400']"
+                             data-height="none"
+                             data-whitespace="normal"
+
+                             data-type="text" 
+                             data-responsive_offset="on" 
+                             data-wrapper_class="tp-nopointer" 
+
+                             data-frames='[{"delay":700,"speed":1000,"frame":"0","from":"y:20px;sX:2;sY:3;opacity:0;fb:10px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"}]'
+                             data-textAlign="['center','center','center','center']"
+                             data-paddingtop="[0,0,0,0]"
+                             data-paddingright="[0,0,0,0]"
+                             data-paddingbottom="[0,0,0,0]"
+                             data-paddingleft="[0,0,0,0]"
+
+                             style="z-index: 7; min-width: 900px; max-width: 900px; white-space: normal; font-size: 25px; line-height: 35px; font-weight: 400; color: rgba(4,37,60,1);font-family:'Lato', sans-serif;letter-spacing:0px;"> </div>
+
+                        <!-- LAYER NR. 4 -->
+                        <a class="tp-caption rev-btn  tp-resizeme  blurslider-button" 
+                           href="/#/login" id="slide-16-layer-17" 
+                           data-x="['center','center','center','center']" data-hoffset="['0','0','0','0']" 
+                           data-y="['middle','middle','middle','middle']" data-voffset="['140','140','110','110']" 
+                           data-width="none"
+                           data-height="none"
+                           data-whitespace="nowrap"
+                           data-type="button" 
+                           data-actions=''
+                           data-responsive_offset="on" 
+                           data-frames='[{"delay":900,"speed":1000,"frame":"0","from":"y:100px;sX:2;sY:3;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power3.easeInOut"},{"delay":"wait","speed":600,"frame":"999","to":"auto:auto;fb:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"200","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;fb:0;","style":"c:rgba(255,255,255,1);"}]'
+                           data-textAlign="['inherit','inherit','inherit','inherit']"
+                           data-paddingtop="[0,0,0,0]"
+                           data-paddingright="[35,35,35,35]"
+                           data-paddingbottom="[0,0,0,0]"
+                           data-paddingleft="[35,35,35,35]"
+                           data-blendmode="multiply"
+
+                           style="z-index: 8; white-space: nowrap; font-size: 15px; line-height: 70px; font-weight: 600; color: rgba(255,255,255,1);background-color:rgba(4,37,60,1);outline:none;box-shadow:none;box-sizing:border-box;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;letter-spacing:1px;cursor:pointer;text-decoration: none;text-transform:uppercase"> Log in </a>
+                    </li>
+                </ul>
+                <div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div> </div>
+        </div><!-- END REVOLUTION SLIDER -->
+
+
+
+</template>
+
+<template id="signup-page">
+  <div class="vue-component">
+
+            <div class="bg-parallax parallax-overlay accounts-page"  data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg6.jpg")'>
+            <div class="container">
+                <div class="row pb30 align-items-end">
+                    <div class="col-lg-4 ml-md-auto col-md-6 col-sm-6 mb20">
+                        <h3 class="text-white text-left mb30">Join the world of Assan.</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Name" v-model="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email" v-model="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password" v-model="password">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Confirm Password" v-model="passwordConfirmation">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-rounded btn-primary btn-block" v-on:click="submit()">Sign Up</button>
+                            </div>
+                            <div class="text-center text-white-gray">Already have an account? SignIn below</div>
+                            <hr>
+                            <div>
+                                <a href="/#/login" class="btn btn-white-outline btn-block">Log In</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb20">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+   <!--  <div class="container">
+      <h1>Signup</h1>
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-group">
+        <label>Name:</label> 
+        <input type="text" class="form-control" v-model="name">
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" v-model="email">
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" v-model="password">
+      </div>
+      <div class="form-group">
+        <label>Password confirmation:</label>
+        <input type="password" class="form-control" v-model="passwordConfirmation">
+      </div>
+      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+    </div> -->
+
+  </div>
+</template>
+
+<template id="login-page">
+  <div class="vue-component">
+            <div class="bg-parallax parallax-overlay accounts-page"  data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg6.jpg")'>
+            <div class="container">
+                <div class="row pb30">
+                    <div class="col-lg-4 col-md-6 mr-auto ml-auto col-sm-8">
+                        <h3 class="text-white text-center mb30">Login to continue</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Email" v-model="email">
+                            </div>
+                            <div class="form-group">
+                                <input type="password" class="form-control" placeholder="Password" v-model="password">
+                            </div>
+                              <div class="form-group">
+                                  <button type="submit" class="btn btn-rounded btn-primary btn-block" v-on:click="submit()">Sign In</button>
+                            </div>
+                            <div class="text-center"><a href="#" class="btn btn-link btn-block">Having trouble logging in?</a></div>
+                            <hr>
+                            <div>
+                                <a href="/#/signup" class="btn btn-white-outline btn-block">Sign Up</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- <div class="container">
+      <h1>Login</h1>
+      <ul>
+        <li class="text-danger" v-for="error in errors">{{ error }}</li>
+      </ul>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" class="form-control" v-model="email">
+      </div>
+      <div class="form-group">
+        <label>Password:</label>
+        <input type="password" class="form-control" v-model="password">
+      </div>
+      <button class="btn btn-primary" v-on:click="submit()">Submit</button>
+    </div> -->
+
+  </div>
+</template>
+
+<template id="Homes">
+  <div class="vue-component">
+
+
+        <div class="page-titles-img title-space-lg bg-parallax parallax-overlay color-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpg")'>
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-8 ml-auto mr-auto">
+                        <h1 class='text-uppercase'> Homes </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div><!--page title end-->
+        <div class="container pt100 pb100">
+            <div class="">
+                <div class="">
+                    <div class="clearfix">
+                        <div id="js-filters-lightbox-gallery" class="cbp-l-filters-button cbp-l-filters-left">
+                            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
+                            <div data-filter=".graphic" class="cbp-filter-item">Graphic</div>
+                            <div data-filter=".logos" class="cbp-filter-item">Logo</div>
+                            <div data-filter=".motion" class="cbp-filter-item">Motion</div>
+                        </div>
+                    </div>
+                    <div id="js-grid-lightbox-gallery" class="cbp">
+                        <div v-for="home in homes" class="cbp-item web-design graphic print motion">
+                            <div class="cbp-caption margin-bottom-20">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="images/img1.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <ul class="link-captions no-bottom-space">
+                                                <li><a href="folio-single-gallery.html"><i class="ti-link"></i></a></li>
+                                                <li><a href="images/img1.jpg" class="cbp-lightbox" data-title="Design Object"><i class="ti-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>                      
+                                </div>                              
+                            </div><!--/cbp-caption-->
+                            <div class="cbp-title-dark">
+                                <div class="cbp-l-grid-agency-title">{{ home.name }}</div>
+                                <div class="cbp-l-grid-agency-desc">{{ home.address }}</div>
+                            </div><!--/bottom desc-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+  </div>
+
+</template>
+
+
+
+<template id="CreateHome">
+  <div class="vue-component">
+
+             <div class="bg-parallax parallax-overlay accounts-page"  data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg6.jpg")'>
+            <div class="container">
+                <div class="row pb30 align-items-end">
+                    <div class="col-lg-4 ml-md-auto col-md-6 col-sm-6 mb20">
+                        <h3 class="text-white text-left mb30">Join the world of Assan.</h3>
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Name your home" v-model="name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Address" v-model="address">
+                            </div>
+                            <hr>
+                            <div>
+                                <a href="#" class="btn btn-white-outline btn-block" v-on:click="submit()">Create A Home</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 mb20">
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+</template>
+
+
+<template id="my-homes">
+  <div class="vue-component">
+            <div class="page-titles-img title-space-lg bg-parallax parallax-overlay color-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpg")'>
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-8 ml-auto mr-auto">
+                        <h1 class='text-uppercase'>My homes </h1>
+
+                    </div>
+                </div>
+            </div>
+        </div><!--page title end-->
+
+        <div class="container pt100 pb100">
+            <div class="">
+                <div class="">
+                    <div class="clearfix">
+                        <div id="js-filters-lightbox-gallery" class="cbp-l-filters-button cbp-l-filters-left">
+                            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
+                            <div data-filter=".graphic" class="cbp-filter-item">Graphic</div>
+                            <div data-filter=".logos" class="cbp-filter-item">Logo</div>
+                            <div data-filter=".motion" class="cbp-filter-item">Motion</div>
+                        </div>
+                    </div>
+                    <div id="js-grid-lightbox-gallery" class="cbp">
+                        <div class="cbp-item web-design graphic print motion" v-for="home in homes">
+                            <div class="cbp-caption margin-bottom-20">
+                                <div class="cbp-caption-defaultWrap">
+                                    <img src="images/img1.jpg" alt="">
+                                </div>
+                                <div class="cbp-caption-activeWrap">
+                                    <div class="cbp-l-caption-alignCenter">
+                                        <div class="cbp-l-caption-body">
+                                            <ul class="link-captions no-bottom-space">
+                                                <li><a v-bind:href="'/#/my_home/' + home.id "><i class="ti-link"></i></a></li>
+                                                <li><a href="images/img1.jpg" class="cbp-lightbox" data-title="Design Object"><i class="ti-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>                      
+                                </div>                              
+                            </div><!--/cbp-caption-->
+                            <div class="cbp-title-dark">
+                                <div class="cbp-l-grid-agency-title">{{ home.name }}</div>
+                                <div class="cbp-l-grid-agency-desc">{{home.address}}</div>
+                            </div><!--/bottom desc-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+ </div>
+
+</template>
+
+
+<template id="showHomePage">
+<div>
+   <h1> {{ home.name }}</h1>
+    <h2>{{ home.address }}</h2>
+    <div v-for="room in home.rooms">
+        <p>Room name: {{ room.name }}</p>
+        <div v-for="appliance in room.appliances">
+            <p>Appliance name: {{ appliance.friendlyName }}</p>
+            <p> serial number: {{ appliance.serialNumber }}</p>
+
+            <button v-if="foundAppliance(appliance)" v-on:click="submit()">Turn on/ff</button>
+            <button v-else="foundAppliance(appliance)" disabled>Device not found</button>
+        </div>
+    </div>
+</div>
+</template>
