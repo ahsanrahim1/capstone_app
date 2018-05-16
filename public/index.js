@@ -1,4 +1,4 @@
-/* global Vue, VueRouter, axios, jQuery */
+/* global Vue, VueRouter, axios, jQuery, fabric */
 
 var HomePage = {
   template: "#home-page",
@@ -217,7 +217,7 @@ var SignupPage = {
         password_confirmation: this.passwordConfirmation
       };
       axios
-        .post("users", params)
+        .post("/users", params)
         .then(function(response) {
           router.push("/login");
         })
@@ -454,7 +454,8 @@ var HomeShowPage = {
         address: "Address",
         rooms: {}
       },
-      devices: []
+      devices: [],
+      canvas: null
     };
   },
   created: function() {
@@ -472,14 +473,62 @@ var HomeShowPage = {
       }.bind(this)
     );
   },
+  mounted: function() {
+    this.canvas = new fabric.Canvas("canvas");
+  },
   methods: {
-    submit: function() {
-      axios.get("/run-wemo");
+    search: function() {},
+    submit: function(serialNumber) {
+      var params = { serialNumber: serialNumber };
+      axios.get("/run-wemo", { params: params });
     },
     foundAppliance: function(appliance) {
       return this.devices
         .map(device => device.serialNumber)
         .includes(appliance.serialNumber);
+    },
+    selectFloor: function(floorNumber) {
+      var rooms = this.home.rooms.filter(function(room) {
+        return room.floor === floorNumber;
+      });
+      console.log(floorNumber, rooms);
+
+      this.canvas.clear();
+
+      rooms.forEach(
+        function(room) {
+          var rect = new fabric.Rect({
+            top: room.top,
+            left: room.left,
+            width: room.width,
+            height: room.height,
+            fill: "blue"
+          });
+          this.canvas.add(rect.set("selectable", false));
+          var i = 0;
+          room.appliances.forEach(
+            function(appliance) {
+              console.log("appliance", appliance);
+              var text = new fabric.Text(appliance.friendlyName, {
+                left: room.left,
+                top: room.top + 30 * i,
+                fontSize: 30
+              });
+              text.serialNumber = appliance.serialNumber;
+              this.canvas.add(
+                text.set("selectable", false).on(
+                  "mousedown",
+                  function() {
+                    console.log("clicked on text", text.serialNumber, text);
+                    this.submit(text.serialNumbe780o9werr);
+                  }.bind(this)
+                )
+              );
+              i += 1;
+            }.bind(this)
+          );
+        }.bind(this)
+      );
     }
   },
   computed: {}

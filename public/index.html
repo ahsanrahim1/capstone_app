@@ -24,6 +24,7 @@
         <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.js"></script>
         <script src="index.js" defer></script>
+        <script src="fabric.min.js"></script>
     </head>
 
     <body>
@@ -99,7 +100,7 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt=""></a>
+                <a class="navbar-brand" href="/#/"><img src="images/logo.png" alt=""></a>
                 <div  id="navbarNavDropdown" class="navbar-collapse collapse">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item dropdown">
@@ -375,7 +376,7 @@
 <template id="signup-page">
   <div class="vue-component">
 
-            <div class="bg-parallax parallax-overlay accounts-page"  data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg6.jpg")'>
+            <div class="bg-parallax parallax-overlay accounts-page"  data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg6.jpeg")'>
             <div class="container">
                 <div class="row pb30 align-items-end">
                     <div class="col-lg-4 ml-md-auto col-md-6 col-sm-6 mb20">
@@ -439,7 +440,7 @@
 
 <template id="login-page">
   <div class="vue-component">
-            <div class="bg-parallax parallax-overlay accounts-page"  data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg6.jpg")'>
+            <div class="bg-parallax parallax-overlay accounts-page"  data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg6.jpeg")'>
             <div class="container">
                 <div class="row pb30">
                     <div class="col-lg-4 col-md-6 mr-auto ml-auto col-sm-8">
@@ -488,7 +489,7 @@
   <div class="vue-component">
 
 
-        <div class="page-titles-img title-space-lg bg-parallax parallax-overlay color-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpg")'>
+        <div class="page-titles-img title-space-lg bg-parallax parallax-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpeg")'>
             <div class="container">
                 <div class="row">
                     <div class=" col-md-8 ml-auto mr-auto">
@@ -502,12 +503,7 @@
             <div class="">
                 <div class="">
                     <div class="clearfix">
-                        <div id="js-filters-lightbox-gallery" class="cbp-l-filters-button cbp-l-filters-left">
-                            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
-                            <div data-filter=".graphic" class="cbp-filter-item">Graphic</div>
-                            <div data-filter=".logos" class="cbp-filter-item">Logo</div>
-                            <div data-filter=".motion" class="cbp-filter-item">Motion</div>
-                        </div>
+                     
                     </div>
                     <div id="js-grid-lightbox-gallery" class="cbp">
                         <div v-for="home in homes" class="cbp-item web-design graphic print motion">
@@ -519,8 +515,7 @@
                                     <div class="cbp-l-caption-alignCenter">
                                         <div class="cbp-l-caption-body">
                                             <ul class="link-captions no-bottom-space">
-                                                <li><a href="folio-single-gallery.html"><i class="ti-link"></i></a></li>
-                                                <li><a href="images/img1.jpg" class="cbp-lightbox" data-title="Design Object"><i class="ti-plus"></i></a></li>
+                                                <li><a href="#"><i class="ti-plus"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>                      
@@ -576,7 +571,7 @@
 
 <template id="my-homes">
   <div class="vue-component">
-            <div class="page-titles-img title-space-lg bg-parallax parallax-overlay color-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpg")'>
+            <div class="page-titles-img title-space-lg bg-parallax parallax-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg17.jpeg")'>
             <div class="container">
                 <div class="row">
                     <div class=" col-md-8 ml-auto mr-auto">
@@ -591,12 +586,7 @@
             <div class="">
                 <div class="">
                     <div class="clearfix">
-                        <div id="js-filters-lightbox-gallery" class="cbp-l-filters-button cbp-l-filters-left">
-                            <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
-                            <div data-filter=".graphic" class="cbp-filter-item">Graphic</div>
-                            <div data-filter=".logos" class="cbp-filter-item">Logo</div>
-                            <div data-filter=".motion" class="cbp-filter-item">Motion</div>
-                        </div>
+  
                     </div>
                     <div id="js-grid-lightbox-gallery" class="cbp">
                         <div class="cbp-item web-design graphic print motion" v-for="home in homes">
@@ -609,7 +599,6 @@
                                         <div class="cbp-l-caption-body">
                                             <ul class="link-captions no-bottom-space">
                                                 <li><a v-bind:href="'/#/my_home/' + home.id "><i class="ti-link"></i></a></li>
-                                                <li><a href="images/img1.jpg" class="cbp-lightbox" data-title="Design Object"><i class="ti-plus"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>                      
@@ -631,17 +620,40 @@
 
 <template id="showHomePage">
 <div>
-   <h1> {{ home.name }}</h1>
-    <h2>{{ home.address }}</h2>
-    <div v-for="room in home.rooms">
-        <p>Room name: {{ room.name }}</p>
-        <div v-for="appliance in room.appliances">
-            <p>Appliance name: {{ appliance.friendlyName }}</p>
-            <p> serial number: {{ appliance.serialNumber }}</p>
+     <div class="page-titles-img title-space-lg bg-parallax parallax-overlay color-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpg")'>
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-8 ml-auto mr-auto">
+                        <h1 class='text-uppercase'>{{ home.name }} </h1>
 
-            <button v-if="foundAppliance(appliance)" v-on:click="submit()">Turn on/ff</button>
-            <button v-else="foundAppliance(appliance)" disabled>Device not found</button>
+                    </div>
+                </div>
+            </div>
+        </div><!--page title end-->
+ <div class="container mb70">
+    <div class="row">
+        <div class="col-lg-3 mb40">
+            <div class="mb40">
+            </div><!--/col-->
+            <div class="mb40">
+                <h4 class="sidebar-title">Floors</h4>
+                <ul class="list-unstyled categories">                       
+                    <li class="active" ><a href="#" v-on:click.prevent="selectFloor(1)">Floor 1</a>
+                        <ul class="list-unstyled" v-for="room in home.rooms">
+                            <li v-if="room.floor === 1"><a href="/#/my_home/1">{{room.name}}</a></li>
+                        </ul>
+                    </li>
+                      <li class="active" ><a href="#" v-on:click.prevent="selectFloor(2)">Floor 2</a>
+                        <ul class="list-unstyled" v-for="room in home.rooms">
+                            <li v-if="room.floor === 2"><a href="/#/my_home/1">{{room.name}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/col-->
+        </div>
+        <div class="col-lg-9 mb40">
+            <h1>Rooms</h1>
+            <canvas id="canvas" width="900" height="700"></canvas>
         </div>
     </div>
-</div>
 </template>

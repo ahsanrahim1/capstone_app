@@ -5,7 +5,12 @@ class Room < ApplicationRecord
   def as_json
     {
       name: name,
-      appliances: appliances.as_json
+      appliances: appliances.as_json,
+      floor: floor,
+      top: top,
+      left: left,
+      width: width,
+      height: height
     }
   end
 end
