@@ -8,6 +8,7 @@ class Home < ApplicationRecord
       id:id,
       name: name,
       address: address,
+      image:image,
       rooms: rooms.as_json
     }
   end

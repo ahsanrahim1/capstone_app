@@ -19,7 +19,7 @@
         <link rel="stylesheet" type="text/css" href="cubeportfolio/css/cubeportfolio.min.css">
         <link href="css/style.css" rel="stylesheet">
         <meta charset="UTF-8">
-        <title>My App</title>
+        <title>Homer</title>
         <script src="https://unpkg.com/vue/dist/vue.js"></script>
         <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.js"></script>
@@ -257,6 +257,7 @@
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
         <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>
+        
 
         <!-- load cubeportfolio -->
         <script type="text/javascript" src="cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
@@ -272,7 +273,7 @@
                 <ul>  <!-- SLIDE  -->
                     <li data-index="rs-16" data-transition="fade" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off"  data-easein="Power4.easeOut" data-easeout="Power4.easeOut" data-masterspeed="default"  data-thumb="http://works.themepunch.com/revolution_5_3/wp-content/"  data-rotate="0"  data-saveperformance="off"  data-title="Example One" data-param1="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-param10="" data-description="">
                         <!-- MAIN IMAGE -->
-                        <img src="images/rev-images/transparent.png" data-bgcolor='#ffffff'' style='background:#ffffff' alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina>
+                        <!-- <img src="images/rev-images/transparent.png" data-bgcolor='#ffffff'' style='background:#ffffff' alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="off" class="rev-slidebg" data-no-retina> -->
                         <!-- LAYERS -->
 
                         <!-- LAYER NR. 1 -->
@@ -509,7 +510,7 @@
                         <div v-for="home in homes" class="cbp-item web-design graphic print motion">
                             <div class="cbp-caption margin-bottom-20">
                                 <div class="cbp-caption-defaultWrap">
-                                    <img src="images/img1.jpg" alt="">
+                                    <img v-bind:src=home.image alt="">
                                 </div>
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
@@ -592,7 +593,7 @@
                         <div class="cbp-item web-design graphic print motion" v-for="home in homes">
                             <div class="cbp-caption margin-bottom-20">
                                 <div class="cbp-caption-defaultWrap">
-                                    <img src="images/img1.jpg" alt="">
+                                    <img v-bind:src='home.image' alt="">
                                 </div>
                                 <div class="cbp-caption-activeWrap">
                                     <div class="cbp-l-caption-alignCenter">
@@ -620,7 +621,7 @@
 
 <template id="showHomePage">
 <div>
-     <div class="page-titles-img title-space-lg bg-parallax parallax-overlay color-overlay" data-jarallax='{"speed": 0.2}' style='background-image: url("images/bg2.jpg")'>
+     <div class="page-titles-img title-space-lg bg-parallax " data-jarallax='{"speed": 0.2}' v-bind:style="'background-image: url(' + home.image + ')'">
             <div class="container">
                 <div class="row">
                     <div class=" col-md-8 ml-auto mr-auto">
