@@ -502,7 +502,9 @@ var HomeShowPage = {
             left: room.left,
             width: room.width,
             height: room.height,
-            fill: "blue"
+            fill: "grey",
+            strokewidth: 10,
+            stroke: "black"
           });
           this.canvas.add(rect.set("selectable", false));
           var i = 0;
@@ -510,14 +512,31 @@ var HomeShowPage = {
             function(appliance) {
               console.log("appliance", appliance);
               var text = new fabric.Text(appliance.friendlyName, {
+                // left: room.left,
+                // top: room.top + 30 * i,
+                originX: "center",
+                originY: "center",
+                fontSize: 15
+              });
+              var rect = new fabric.Rect({
+                // left: room.left,
+                // top: room.top + 30 * i,
+                originX: "center",
+                originY: "center",
+                height: 25,
+                width: 80,
+                fill: "#f2f2f2",
+                strokewidth: 10,
+                stroke: "black"
+              });
+              var group = new fabric.Group([rect, text], {
                 left: room.left,
-                top: room.top + 30 * i,
-                fontSize: 30
+                top: room.top + 30 * i
               });
               text.serialNumber = appliance.serialNumber;
               if (this.foundAppliance(appliance)) {
                 this.canvas.add(
-                  text.set("selectable", false).on(
+                  group.set("selectable", false).on(
                     "mousedown",
                     function() {
                       console.log("clicked on text", text.serialNumber, text);
