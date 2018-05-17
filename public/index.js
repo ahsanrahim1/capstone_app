@@ -515,15 +515,18 @@ var HomeShowPage = {
                 fontSize: 30
               });
               text.serialNumber = appliance.serialNumber;
-              this.canvas.add(
-                text.set("selectable", false).on(
-                  "mousedown",
-                  function() {
-                    console.log("clicked on text", text.serialNumber, text);
-                    this.submit(text.serialNumbe780o9werr);
-                  }.bind(this)
-                )
-              );
+              if (this.foundAppliance(appliance)) {
+                this.canvas.add(
+                  text.set("selectable", false).on(
+                    "mousedown",
+                    function() {
+                      console.log("clicked on text", text.serialNumber, text);
+                      this.submit(text.serialNumber);
+                    }.bind(this)
+                  )
+                );
+              }
+
               i += 1;
             }.bind(this)
           );
