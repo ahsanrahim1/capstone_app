@@ -506,7 +506,13 @@ var HomeShowPage = {
             strokewidth: 10,
             stroke: "black"
           });
-          this.canvas.add(rect.set("selectable", false));
+          var text = new fabric.Text(room.name, {
+            top: room.top + 50,
+            left: room.left,
+            fontsize: 20
+          });
+          var group = new fabric.Group([rect, text]);
+          this.canvas.add(group.set("selectable", false));
           var i = 0;
           room.appliances.forEach(
             function(appliance) {
